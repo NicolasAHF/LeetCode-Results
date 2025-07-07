@@ -28,5 +28,9 @@ var maxDepth = function(root) {
         }
     }
     
-    return countIzq > countDer ? countIzq : countDer;
+    if(countIzq > countDer){
+        return countIzq;
+    }else{
+        return countDer;
+    }
 };
