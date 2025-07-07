@@ -18,19 +18,15 @@ var maxDepth = function(root) {
     }else{
         if(root.left === null && root.right === null){
         return 1;
-    }else{
-        if(root.left){
-            countIzq = maxDepth(root.left) + 1;
+        }else{
+            if(root.left){
+                countIzq = maxDepth(root.left) + 1;
+            }
+            if(root.right){
+                countDer = maxDepth(root.right) + 1;
+            }
         }
-        if(root.right){
-            countDer = maxDepth(root.right) + 1;
-        }
-    }
     }
     
-    if(countIzq > countDer){
-        return countIzq;
-    }else{
-        return countDer;
-    }
+    return countIzq > countDer ? countIzq : countDer;
 };
