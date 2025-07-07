@@ -11,26 +11,26 @@
  * @return {number}
  */
 var maxDepth = function(root) {
-    let countIzq = 0;
-    let countDer = 0;
     if(root === null){
         return 0;
     }else{
         if(root.left === null && root.right === null){
             return 1;
         }else{
+            let countIzq = 0;
+            let countDer = 0;
             if(root.left){
                 countIzq = maxDepth(root.left) + 1;
             }
             if(root.right){
                 countDer = maxDepth(root.right) + 1;
             }
-        }
-    }
-    
-    if(countIzq > countDer){
+            if(countIzq > countDer){
         return countIzq;
     }else{
         return countDer;
     }
+        }
+    }
+    
 };
