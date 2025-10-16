@@ -8,7 +8,7 @@ var twoSum = function(nums, target) {
     const map = new Map();
     for(let num of nums){
         complement = target - num;
-        if(map.get(num) != undefined){
+        if(map.has(num)){
             return [nums.indexOf(complement), nums.indexOf(num, nums.indexOf(complement) + 1)];
         }
         map.set(complement, num);
